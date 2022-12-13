@@ -1,5 +1,5 @@
 mongoose = require("mongoose");
-const book = require("./models/book.js");
+books = require("./models/book.js");
 //const booksController = require("./controllers/booksController")
 const express = require("express");
 const app = express();
