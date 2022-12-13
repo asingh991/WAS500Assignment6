@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(149, 248, 215);}
+h1, h2, h3 {
+    padding-left:260px}
+p {
+    margin-left: 630px;
+    box-sizing: border-box;
+    background-color: rgb(231, 242, 242);
+    width: 50%;
+    padding:30px
+}
+.side_navigation_bar {
+    height: 100%;
+    width: 170px; 
+    top: 0;
+    position: absolute;
+    background-color: rgb(141, 158, 150);
+    padding-top: 80px;
+    border: 4px;
+    border-style: double;
+    border-color: rgb(29, 17, 97);}
+.side_navigation_bar a {
+    padding: 20px ;
+    font-size: 25px;
+    color: #1e0f0f;
+    transition: 0.3s;}
+
+.side_navigation_bar a:hover {
+    color: #d5cbcb;}
+
+.book_list {
+    background-color: rgb(214, 230, 233);
+    padding-left: 300px;
+}
+
+.book_list a {
+    vertical-align: middle;
+    font-style: italic;
+}
+
+.book_titles {
+    font-size: xx-large;
+    padding-bottom: 50%;
+}
+.title_headers{
+    text-align: right;
+    padding-right: 30%;
+}
+.book_description{
+    text-align: right;
+}
+.images{
+    float: left;
+    vertical-align: top;
+    position: abosolute;
+}
