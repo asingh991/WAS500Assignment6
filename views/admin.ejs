@@ -1,0 +1,25 @@
+<%- include('partial-navbar.ejs') %>
+<body>
+    <table>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>author</th>
+          <th>edit</th>
+          <th>delete</th>
+        </tr>
+        <tr>
+          <td>6397f92a054050341296c633</td>
+          <td>Pride And Prejudice</td>
+          <td>Jane Austen</td>
+          <td><button onclick="document.location='./edit/6397f92a054050341296c633'"></button></td>
+          <td><button onclick="if(confirm('Are you sure you want to delete this book?')){document.location='./books/6397f92a054050341296c633/delete?_method=DELETE'}else{return false;};"><i class="fa fa-trash"></i></button></td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+</body>
+</html>
