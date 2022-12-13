@@ -47,6 +47,12 @@ app.get("/admin", (req,res) => {
   res.render('admin.ejs');
 }
 );
+app.get("/edit/:bookID", (req,res) => {
+  console.log(`Received an incoming request...`, req.url);
+  let id = req.params.bookID;
+  res.render('edit'+id+'.ejs');
+}
+);
 /*app.get("/books", booksController.getAllbooks,(req, res, next) => {
     console.log(req.data);
     res.render("books", { books: req.data });

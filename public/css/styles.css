@@ -54,3 +54,8 @@ p {
     vertical-align: top;
     position: abosolute;
 }
+table {
+    padding-left: 20px;
+    border: 4px;
+    border-color: black
+}

@@ -1,5 +1,6 @@
 <%- include('partial-navbar.ejs') %>
 <body>
+    <h2>List of Books</h2>
     <table>
         <tr>
           <th>id</th>
@@ -12,13 +13,22 @@
           <td>6397f92a054050341296c633</td>
           <td>Pride And Prejudice</td>
           <td>Jane Austen</td>
-          <td><button onclick="document.location='./edit/6397f92a054050341296c633'"></button></td>
-          <td><button onclick="if(confirm('Are you sure you want to delete this book?')){document.location='./books/6397f92a054050341296c633/delete?_method=DELETE'}else{return false;};"><i class="fa fa-trash"></i></button></td>
+          <td><button><a href ='localhost:3000/edit/6397f92a054050341296c633'>Edit</a></button></td>
+          <td><button onclick="if(confirm('Do you want to delete this book?')){document.location='./books/6397f92a054050341296c633/delete?_method=DELETE'}else{return false;};"></button></td>
         </tr>
         <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
+          <td>6397f953054050341296c634</td>
+          <td>The Dragonet Prophecy</td>
+          <td>Tui T. Sutherland</td>
+          <td><button><a href ='./edit/6397f953054050341296c634'>Edit</a></button></td>
+          <td><button onclick="if(confirm('Do you want to delete this book?')){document.location='./books/6397f953054050341296c634/delete?_method=DELETE'}else{return false;};"></button></td>
+        </tr>
+        <tr>
+          <td>6398dda6092a00bfd9a92c84</td>
+          <td>Norse Mythology</td>
+          <td>Neil Gaiman</td>
+          <td><button><a href ='./edit/6398dda6092a00bfd9a92c84'>Edit</a></button></td>
+          <td><button onclick="if(confirm('Do you want to delete this book?')){document.location='./books/6398dda6092a00bfd9a92c84/delete?_method=DELETE'}else{return false;};"></button></td>
         </tr>
       </table>
 </body>
