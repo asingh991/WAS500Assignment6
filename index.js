@@ -56,7 +56,8 @@ app.get("/edit/:bookID", (req,res) => {
 /*
 app.post("/subscribe", booksController.savebook);
 */
-app.post("/updated/:bookID", booksController.updateBook, booksController.redirectView);
+app.post("/updated/:bookID", booksController.updateBook);
+app.post("/delete/:bookID", booksController.deleteBook);
 app.post("/book", exports.savebook = (req, res) => {
   let newbook = new book({
     id: req.body.id,

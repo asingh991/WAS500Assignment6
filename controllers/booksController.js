@@ -19,8 +19,17 @@ exports.updateBook = (req, res) => {
       name: req.body.name,
       author: req.body.author}, 
     (error, book) => {
-      if (error) next(error);
-      req.data = book;
+      if (error) res.send(error);
+      res.locals.redirect = "/admin";
+  });
+};
+exports.deleteBook = (req, res) => {
+  let id = req.params.id;
+  books.findByIdAndDelete(id, {
+      name: req.body.name,
+      author: req.body.author}, 
+    (error, book) => {
+      if (error) res.send(error);
       res.locals.redirect = "/admin";
   });
 };
