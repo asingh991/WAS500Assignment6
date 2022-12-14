@@ -1,6 +1,6 @@
 mongoose = require("mongoose");
 books = require("./models/book.js");
-//const booksController = require("./controllers/booksController")
+booksController = require("./controllers/booksController")
 const express = require("express");
 const app = express();
 
@@ -42,26 +42,34 @@ app.get("/books/:bookID", (req,res) => {
   res.render('book'+id+'.ejs');
 }
 );
+app.get("/admin", (req,res) => {
+  console.log(`Received an incoming request...`, req.url);
+  res.render('admin.ejs');
+}
+);
 app.get("/edit/:bookID", (req,res) => {
   console.log(`Received an incoming request...`, req.url);
   let id = req.params.bookID;
   res.render('edit'+id+'.ejs');
 }
 );
-app.get("/admin", (req,res) => {
-  console.log(`Received an incoming request...`, req.url);
-  res.render('admin.ejs');
-}
-);
-/*app.get("/books", booksController.getAllbooks,(req, res, next) => {
-    console.log(req.data);
-    res.render("books", { books: req.data });
-  }
-);*/
 /*
-app.get("/contact", booksController.getbookPage);
 app.post("/subscribe", booksController.savebook);
 */
+app.post("/updated/:bookID", booksController.updateBook, booksController.redirectView);
+app.post("/book", exports.savebook = (req, res) => {
+  let newbook = new book({
+    id: req.body.id,
+    name: req.body.name,
+    authorName: req.body.authorName,
+    description: req.body.description,
+    bookImage: req.body.bookImage,
+  });
+  newbook.save((error, result) => {
+    if (error) res.send(error);
+    res.render("thanks");
+  });}
+);
 app.listen(app.get("port"), () => {
   console.log(`Server running @ http://localhost:${app.get("port")}`);
 });

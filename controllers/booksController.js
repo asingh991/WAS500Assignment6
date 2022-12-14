@@ -1,17 +1,5 @@
 const book = require("../models/books.js");
 
-exports.getAllbooks = (req, res, next) => {
-  book.find({}, (error, books) => {
-    if (error) next(error);
-    req.data = books;
-    next();
-  });
-};
-
-exports.getbookPage = (req, res) => {
-  res.render("contact");
-};
-
 exports.savebook = (req, res) => {
   let newbook = new book({
     id: req.body.id,
@@ -23,5 +11,16 @@ exports.savebook = (req, res) => {
   newbook.save((error, result) => {
     if (error) res.send(error);
     res.render("thanks");
+  });
+};
+exports.updateBook = (req, res) => {
+  let id = req.params.id;
+  books.findByIdAndUpdate(id, {
+      name: req.body.name,
+      author: req.body.author}, 
+    (error, book) => {
+      if (error) next(error);
+      req.data = book;
+      res.locals.redirect = "/admin";
   });
 };
