@@ -33,3 +33,13 @@ exports.deleteBook = (req, res) => {
       res.locals.redirect = "/admin";
   });
 };
+exports.newBook = (req, res) => {
+  let bookdetails = new Books({
+    name: req.body.name,
+    authorName: req.body.authorName,
+  });
+  bookdetails.save((error, savedBook) => {
+    if (error) res.send(error);
+    res.locals.redirect = "/admin";
+  })
+}

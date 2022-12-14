@@ -1,8 +1,11 @@
 <%- include('partial-navbar.ejs') %>
 <body>
     <h2>Enter the name of a book and author's name </h2>
-    <form>
+    <form action="/newbook" method="POST">
         <p><b>Name of the book </b><p>
-        <input>
+        <input type="text" name="name" required="required"><br>
+        <p><b>Author: </b></p>
+        <input type="text" name="author" required="required"><br>
+        <button class="save-button" type="submit">Submit</button>
     </form>
 </body>
